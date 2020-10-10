@@ -10,6 +10,7 @@ public class Multimedia {
     @Id
     private Long id;
 
+    private long avatar;
     private long userId;
     private long postId;
     private long commentId;
@@ -17,8 +18,9 @@ public class Multimedia {
     public Multimedia() {
     }
 
-    public Multimedia(Long id, long userId, long postId, long commentId) {
+    public Multimedia(Long id, long avatar, long userId, long postId, long commentId) {
         this.id = id;
+        this.avatar = avatar;
         this.userId = userId;
         this.postId = postId;
         this.commentId = commentId;
@@ -30,6 +32,14 @@ public class Multimedia {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public long getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(long avatar) {
+        this.avatar = avatar;
     }
 
     public long getUserId() {
