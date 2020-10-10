@@ -7,19 +7,17 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 @Service
-public class UploadFile {
+public class UploadFileService {
     @Value("${file.upload-dir}")
     private String fileUpload;
 
     public void save(MultipartFile[] data){
-        int i = 0;
         for (MultipartFile file : data){
-//            String fileName = file.getOriginalFilename();
-            long fileName = System.currentTimeMillis();
             try {
-                FileCopyUtils.copy(file.getBytes(), new File(fileUpload + "/" + fileName + i++));
+                FileCopyUtils.copy(file.getBytes(), new File(fileUpload + "/" + this.fileName(file)));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -37,5 +35,9 @@ public class UploadFile {
     public void delete(String fileName){
         File file = new File(fileUpload +"/"+ fileName);
         file.delete();
+    }
+
+    public String fileName(MultipartFile file){
+        return new Date().getTime() +"-"+ file.getOriginalFilename().replace(" ","_");
     }
 }

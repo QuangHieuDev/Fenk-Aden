@@ -29,20 +29,17 @@ public class User {
     @Size(min = 6, max = 16)
     private String password;
 
-    private String information;
-
     private int status;
 
     public User() {
     }
 
     public User(Long id, @NotNull @NotEmpty String name, @NotNull @NotEmpty @Email String email,
-                @NotNull @NotEmpty @Size(min = 6, max = 16) String password, String information, int status) {
+                @NotNull @NotEmpty @Size(min = 6, max = 16) String password, int status) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.information = information;
         this.status = status;
     }
 
@@ -76,14 +73,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getInformation() {
-        return information;
-    }
-
-    public void setInformation(String information) {
-        this.information = information;
     }
 
     public int getStatus() {

@@ -28,7 +28,8 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(Long id, @NotNull @NotEmpty long userId, @NotNull @NotEmpty long postId, @NotNull String content, Date createDate) {
+    public Comment(Long id, @NotNull @NotEmpty long userId, @NotNull @NotEmpty long postId,
+                   @NotNull String content, Date createDate) {
         this.id = id;
         this.userId = userId;
         this.postId = postId;
