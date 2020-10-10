@@ -8,7 +8,6 @@ import javax.validation.constraints.NotNull;
 @Table(name = "multimedia")
 public class Multimedia {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private long userId;
