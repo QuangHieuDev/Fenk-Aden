@@ -1,6 +1,7 @@
 package com.felkinatden.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -12,6 +13,10 @@ public class Information {
 
     @NotNull
     private long UserId;
+
+    @NotNull
+    @NotEmpty
+    private String name;
 
     @NotNull
     private String information;
