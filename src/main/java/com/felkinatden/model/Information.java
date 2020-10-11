@@ -15,10 +15,8 @@ public class Information {
     private long UserId;
 
     @NotNull
-    @NotEmpty
     private String name;
 
-    @NotNull
     private String information;
 
     public Information() {

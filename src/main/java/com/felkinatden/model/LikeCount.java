@@ -1,10 +1,11 @@
 package com.felkinatden.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "likecount")
-public class LikeCount {
+public class LikeCount implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
